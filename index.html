@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-<meta name="description" content="BRIGHTFL0W official website. Music Producer and Software Developer from Liberia.">
-
+<meta name="description" content="BRIGHTFL0W - Music Producer and Software Developer from Liberia.">
 <title>BRIGHTFL0W | Official Website</title>
 
 <style>
@@ -27,60 +26,53 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
   color: var(--white);
-  background-color: var(--black);
-
-  /* YOUR EXACT UPLOADED PICTURE */
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,.58),
-      rgba(0,0,0,.83)
-    ),
-    url("background.jpg");
-
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
+  line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.88)),
+    url("background.jpg") center center / cover no-repeat;
+  z-index: -1;
+}
 
+/* HEADER */
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
+  background: rgba(0,0,0,.94);
+  border-bottom: 1px solid #3b0000;
+  padding: 15px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  padding: 20px 7%;
-  background: rgba(0,0,0,.94);
-  backdrop-filter: blur(12px);
-  border-bottom: 2px solid var(--red);
+  gap: 20px;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 3px;
-}
-
-.logo span {
-  color: var(--red);
+.site-logo {
+  width: 145px;
+  max-height: 75px;
+  object-fit: contain;
 }
 
 nav {
   display: flex;
+  gap: 22px;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
 nav a {
   color: white;
-  font-size: 12px;
-  font-weight: bold;
   text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
   transition: .3s;
 }
 
@@ -88,711 +80,568 @@ nav a:hover {
   color: var(--red);
 }
 
-/* HERO SECTION */
-
+/* HERO */
 .hero {
   min-height: 90vh;
-  padding: 70px 20px;
+  padding: 90px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  background: rgba(0,0,0,.22);
+}
+
+.hero-logo {
+  width: min(300px, 75%);
+  max-height: 190px;
+  object-fit: contain;
+  margin-bottom: 25px;
 }
 
 .hero h1 {
-  font-size: clamp(48px, 11vw, 110px);
+  font-size: clamp(38px, 8vw, 75px);
   font-weight: 900;
-  letter-spacing: -4px;
-  text-shadow: 4px 4px 0 #760000;
-}
-
-.hero h1 span {
-  color: var(--red);
+  letter-spacing: -3px;
 }
 
 .hero h2 {
-  margin-top: 25px;
-  font-size: clamp(15px, 3vw, 22px);
+  font-size: clamp(18px, 4vw, 27px);
   letter-spacing: 4px;
-  line-height: 1.6;
+  margin: 10px 0;
 }
 
 .hero p {
-  margin-top: 20px;
   color: #ddd;
-  font-size: 12px;
-  letter-spacing: 4px;
-  line-height: 1.8;
+  letter-spacing: 3px;
+  margin: 15px 0 30px;
 }
 
 .tagline {
-  margin-top: 38px;
-  padding: 23px 28px;
-  background: var(--red);
-  color: white;
-  font-size: clamp(16px, 3vw, 22px);
-  font-weight: 900;
-  letter-spacing: 2px;
-  line-height: 1.6;
-  box-shadow: 6px 6px 0 #500000;
+  background: #050505;
+  border: 1px solid var(--red);
+  padding: 17px 25px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
-
-/* BUTTONS */
 
 .btn {
   display: inline-block;
-  margin-top: 23px;
-  padding: 15px 25px;
   background: var(--red);
-  border: 1px solid var(--red);
   color: white;
+  padding: 15px 28px;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 900;
-  font-size: 13px;
+  font-weight: bold;
   transition: .3s;
+  border: 1px solid var(--red);
 }
 
 .btn:hover {
-  background: white;
-  color: black;
-  border-color: white;
-  transform: translateY(-3px);
+  background: black;
+  color: var(--red);
 }
 
 /* GENERAL SECTIONS */
-
 section {
-  padding: 85px 8%;
+  padding: 85px 7%;
   text-align: center;
-  background: rgba(0,0,0,.82);
-  border-top: 1px solid rgba(237,16,16,.3);
-  scroll-margin-top: 70px;
+  scroll-margin-top: 80px;
 }
 
-.dark {
-  background: rgba(0,0,0,.94);
-}
-
-section h2 {
-  font-size: clamp(27px, 5vw, 38px);
-  font-weight: 900;
-  margin-bottom: 22px;
-  letter-spacing: 1px;
-}
-
-section h2::after {
-  content: "";
-  display: block;
-  width: 65px;
-  height: 4px;
-  background: var(--red);
-  margin: 17px auto;
-}
-
-section p {
-  max-width: 720px;
-  margin: auto;
-  color: #ccc;
-  line-height: 1.9;
-}
-
-/* SERVICE CARDS */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(220px, 1fr)
-  );
-  gap: 24px;
-  margin-top: 42px;
-}
-
-.card {
-  padding: 35px 22px;
-  background: rgba(10,10,10,.96);
-  border: 1px solid #4a0000;
-  border-bottom: 4px solid var(--red);
-  border-radius: 5px;
-  transition: .3s;
-}
-
-.card h3 {
+.section-title {
+  font-size: clamp(28px, 5vw, 43px);
   margin-bottom: 15px;
-  font-size: 20px;
+  text-transform: uppercase;
 }
 
-.card:hover {
-  transform: translateY(-7px);
-  border-color: var(--red);
-  box-shadow: 0 10px 30px rgba(237,16,16,.18);
+.section-subtitle {
+  color: #ccc;
+  margin-bottom: 45px;
 }
 
-.clickable {
-  display: block;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
+/* ABOUT */
+.about-content {
+  max-width: 800px;
+  margin: auto;
+  background: rgba(0,0,0,.75);
+  border: 1px solid #590000;
+  padding: 35px;
+  border-radius: 10px;
 }
 
-/* BEAT STORE */
-
-#beat-store {
-  background: rgba(0,0,0,.96);
+.about-content p {
+  color: #ddd;
+  margin-bottom: 15px;
 }
 
-.beat-card {
-  padding: 25px 18px;
-  background: #101010;
-  border: 1px solid #490000;
-  border-radius: 6px;
+/* MUSIC */
+#music {
+  background: rgba(0,0,0,.72);
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.music-card {
+  background: rgba(35,0,0,.85);
+  border: 1px solid #750000;
+  border-radius: 10px;
+  overflow: hidden;
   transition: .3s;
 }
 
-.beat-card:hover {
+.music-card:hover {
   transform: translateY(-7px);
   border-color: var(--red);
-  box-shadow: 0 10px 30px rgba(237,16,16,.2);
 }
 
-/* SAME ORIGINAL PICTURE ON ALL THREE COVERS */
-
-.beat-cover {
+.cover {
   width: 100%;
-  max-width: 190px;
   aspect-ratio: 1 / 1;
-  margin: 0 auto 25px;
-
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,.3),
-      rgba(0,0,0,.6)
-    ),
-    url("background.jpg");
-
-  background-position: center;
-  background-size: cover;
-
-  border: 2px solid var(--red);
-  box-shadow: 0 0 20px rgba(237,16,16,.25);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+  object-fit: cover;
+  display: block;
 }
 
-.beat-cover strong {
+.music-info {
+  padding: 22px;
+}
+
+.music-info h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.music-info p {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.music-info .btn {
+  padding: 11px 17px;
+  font-size: 13px;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.service-card {
+  background: rgba(50,0,0,.8);
+  border: 1px solid #660000;
+  border-radius: 10px;
+  padding: 35px 20px;
+  transition: .3s;
+}
+
+.service-card:hover {
+  border-color: var(--red);
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
   font-size: 22px;
-  font-weight: 900;
-  text-shadow: 2px 2px black;
 }
 
-.beat-cover span {
-  margin-top: 9px;
-  font-size: 9px;
-  letter-spacing: 2px;
+.service-card p {
+  color: #ddd;
 }
 
-.beat-card h3 {
-  font-size: 17px;
-  min-height: 42px;
+/* TECH */
+#tech {
+  background: rgba(0,0,0,.8);
 }
 
-.small-label {
-  margin-top: 12px;
-  color: var(--red);
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 2px;
+.tech-content {
+  max-width: 800px;
+  margin: auto;
+  padding: 35px;
+  border: 1px solid #650000;
+  border-radius: 10px;
+  background: rgba(30,0,0,.7);
 }
 
-.beat-card .btn {
-  width: 100%;
-  font-size: 12px;
-}
-
-/* SOFTWARE DEVELOPMENT */
-
-.tech-card {
-  background: rgba(10,10,10,.96);
+.tech-content p {
+  color: #ddd;
+  margin-bottom: 20px;
 }
 
 /* CONTACT */
-
-.contact a {
-  display: inline-block;
-  margin: 15px;
-  padding: 15px 20px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid var(--red);
-  transition: .3s;
+.contact-box {
+  max-width: 700px;
+  margin: auto;
+  padding: 35px;
+  background: rgba(0,0,0,.85);
+  border: 1px solid #660000;
+  border-radius: 10px;
 }
 
-.contact a:hover {
-  background: var(--red);
+.contact-box p {
+  margin: 15px 0;
+}
+
+.contact-box a {
+  color: #ff3333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
 }
 
 /* FOOTER */
-
 footer {
-  padding: 35px 15px;
-  background: #030303;
-  border-top: 2px solid var(--red);
   text-align: center;
-  font-size: 12px;
-  line-height: 2;
-  color: #999;
+  background: #000;
+  border-top: 1px solid #500000;
+  padding: 30px 15px;
+  color: #aaa;
 }
 
 footer strong {
   color: var(--red);
-  font-size: 20px;
 }
 
-/* MOBILE RESPONSIVENESS */
-
+/* MOBILE */
 @media(max-width: 600px) {
-
   header {
     flex-direction: column;
-    padding: 20px 12px;
+    padding: 12px;
+  }
+
+  .site-logo {
+    width: 125px;
   }
 
   nav {
     justify-content: center;
-    gap: 14px;
+    gap: 15px;
   }
 
   nav a {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .hero {
-    min-height: 82vh;
-  }
-
-  .hero h1 {
-    letter-spacing: -2px;
-  }
-
-  .hero h2 {
-    letter-spacing: 2px;
-  }
-
-  .tagline {
-    font-size: 16px;
+    min-height: 85vh;
+    padding: 60px 15px;
   }
 
   section {
     padding: 65px 6%;
   }
 
-  body {
-    background-attachment: scroll;
+  .about-content,
+  .tech-content,
+  .contact-box {
+    padding: 25px 18px;
   }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
+<!-- HEADER -->
 <header>
-
-  <div class="logo">
-    BRIGHT<span>FL0W.</span>
-  </div>
+  <a href="#home">
+    <img src="logo.png" alt="BRIGHTFL0W Logo" class="site-logo">
+  </a>
 
   <nav>
-    <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#music">MUSIC</a>
-    <a href="#development">TECH</a>
+    <a href="#services">SERVICES</a>
+    <a href="#tech">TECH</a>
     <a href="#contact">CONTACT</a>
   </nav>
-
 </header>
 
-
 <!-- HOME -->
+<section class="hero" id="home">
 
-<div class="hero" id="home">
+  <img src="logo.png" alt="BRIGHTFL0W" class="hero-logo">
 
-  <h1>BRIGHT<span>FL0W</span></h1>
+  <h1>BRIGHTFL0W</h1>
 
-  <h2>
-    MUSIC PRODUCER &<br>
-    SOFTWARE DEVELOPER
-  </h2>
+  <h2>MUSIC PRODUCER &amp;<br> SOFTWARE DEVELOPER</h2>
 
-  <p>
-    LIBERIA | MUSIC | TECHNOLOGY | INNOVATION
-  </p>
+  <p>LIBERIA | MUSIC | TECHNOLOGY | INNOVATION</p>
 
   <div class="tagline">
-    MIXX THIS SHII UP<br>
-    BRIGHTFL0W
+    MIXX THIS SHII UP — BRIGHTFL0W
   </div>
 
-  <a href="#about" class="btn">
-    EXPLORE MY WORLD →
-  </a>
+  <a href="#music" class="btn">EXPLORE MY WORLD</a>
 
-</div>
-
+</section>
 
 <!-- ABOUT -->
-
 <section id="about">
 
-  <h2>ABOUT BRIGHTFL0W</h2>
+  <h2 class="section-title">ABOUT ME</h2>
 
-  <p>
-    Welcome to the official world of BRIGHTFL0W.
-
-    A creative identity built around music production,
-    software development and innovation.
-
-    Creating sounds, developing ideas and building
-    something bigger through creativity and technology.
-
-    Music is the expression. Technology is the future.
+  <p class="section-subtitle">
+    The mind behind the sound and the technology.
   </p>
 
-</section>
+  <div class="about-content">
 
+    <p>
+      I'm BRIGHTFL0W, a music producer and software developer
+      from Liberia.
+    </p>
 
-<!-- MUSIC PRODUCTION -->
+    <p>
+      I believe in creativity, innovation and turning ideas
+      into reality through music and technology.
+    </p>
 
-<section id="music" class="dark">
-
-  <h2>MUSIC PRODUCTION</h2>
-
-  <p>
-    Creating sounds. Building vibes.
-    Bringing music to life.
-  </p>
-
-  <div class="cards">
-
-    <a href="#beat-store" class="card clickable">
-
-      <h3>BEAT PRODUCTION</h3>
-
-      <p>Explore my beats and instrumentals.</p>
-
-      <span class="btn">EXPLORE BEATS →</span>
-
-    </a>
-
-
-    <a href="#recording" class="card clickable">
-
-      <h3>RECORDING</h3>
-
-      <p>Professional recording services.</p>
-
-      <span class="btn">LEARN MORE →</span>
-
-    </a>
-
-
-    <a href="#mixing" class="card clickable">
-
-      <h3>MIXING & MASTERING</h3>
-
-      <p>Bringing clarity and quality to your sound.</p>
-
-      <span class="btn">LEARN MORE →</span>
-
-    </a>
+    <p>
+      From creating beats to building digital experiences,
+      I'm constantly working to improve my craft.
+    </p>
 
   </div>
 
 </section>
 
+<!-- MUSIC -->
+<section id="music">
 
-<!-- BEAT STORE -->
+  <h2 class="section-title">MY MUSIC</h2>
 
-<section id="beat-store">
-
-  <h2>BRIGHTFL0W BEAT STORE</h2>
-
-  <p>
-    Three releases. One sound.
-    Welcome to my world.
+  <p class="section-subtitle">
+    Explore my beats, instrumentals and productions.
   </p>
 
-  <div class="cards">
+  <div class="music-grid">
 
-    <!-- KOLO SZN -->
+    <div class="music-card">
 
-    <div class="beat-card">
+      <img src="background.jpg"
+           alt="KOLO SZN artwork"
+           class="cover">
 
-      <div class="beat-cover">
-        <strong>BRIGHTFL0W</strong>
-        <span>MIXX THIS SHII UP</span>
+      <div class="music-info">
+        <h3>KOLO SZN</h3>
+
+        <p>Instrumental project by BRIGHTFL0W.</p>
+
+        <a href="https://audiomack.com/brightfl0w"
+           target="_blank"
+           rel="noopener"
+           class="btn">
+          LISTEN NOW
+        </a>
       </div>
-
-      <h3>KOLO SZN</h3>
-
-      <div class="small-label">
-        FEATURED RELEASE
-      </div>
-
-      <a
-        href="https://audiomack.com/brightfl0w/album/kolo-szn-1"
-        target="_blank"
-        rel="noopener"
-        class="btn">
-
-        LISTEN NOW →
-
-      </a>
 
     </div>
 
+    <div class="music-card">
 
-    <!-- LONG LIVE GRANDMA -->
+      <img src="background.jpg"
+           alt="Long Live Grandma artwork"
+           class="cover">
 
-    <div class="beat-card">
+      <div class="music-info">
+        <h3>LONG LIVE GRANDMA</h3>
 
-      <div class="beat-cover">
-        <strong>BRIGHTFL0W</strong>
-        <span>MIXX THIS SHII UP</span>
+        <p>A special instrumental project.</p>
+
+        <a href="https://audiomack.com/brightfl0w"
+           target="_blank"
+           rel="noopener"
+           class="btn">
+          LISTEN NOW
+        </a>
       </div>
-
-      <h3>LONG LIVE GRANDMA</h3>
-
-      <div class="small-label">
-        FEATURED RELEASE
-      </div>
-
-      <a
-        href="https://audiomack.com/brightfl0w/song/long-lie-grandma"
-        target="_blank"
-        rel="noopener"
-        class="btn">
-
-        LISTEN NOW →
-
-      </a>
 
     </div>
 
+    <div class="music-card">
 
-    <!-- MOTION SEASON -->
+      <img src="background.jpg"
+           alt="Motion Season Instrument artwork"
+           class="cover">
 
-    <div class="beat-card">
+      <div class="music-info">
+        <h3>MOTION SEASON INSTRUMENT</h3>
 
-      <div class="beat-cover">
-        <strong>BRIGHTFL0W</strong>
-        <span>MIXX THIS SHII UP</span>
+        <p>Another production from BRIGHTFL0W.</p>
+
+        <a href="https://audiomack.com/brightfl0w"
+           target="_blank"
+           rel="noopener"
+           class="btn">
+          LISTEN NOW
+        </a>
       </div>
-
-      <h3>MOTION SEASON INSTRUMENTAL</h3>
-
-      <div class="small-label">
-        FEATURED RELEASE
-      </div>
-
-      <a
-        href="https://audiomack.com/brightfl0w/song/motion-season-instrumental"
-        target="_blank"
-        rel="noopener"
-        class="btn">
-
-        LISTEN NOW →
-
-      </a>
 
     </div>
 
   </div>
-
-  <a
-    href="https://audiomack.com/brightfl0w"
-    target="_blank"
-    rel="noopener"
-    class="btn">
-
-    VISIT MY AUDIOMACK →
-
-  </a>
-
-</section>
-
-
-<!-- RECORDING -->
-
-<section id="recording" class="dark">
-
-  <h2>RECORDING</h2>
-
-  <p>
-    Professional recording services.
-    Bringing your musical ideas to life.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-
-      <h3>VOCAL RECORDING</h3>
-
-      <p>Get your vocals recorded with quality.</p>
-
-    </div>
-
-    <div class="card">
-
-      <h3>ARTIST SESSIONS</h3>
-
-      <p>Creating the right environment for creativity.</p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- MIXING AND MASTERING -->
-
-<section id="mixing">
-
-  <h2>MIXING & MASTERING</h2>
-
-  <p>
-    Bringing clarity, balance and professional
-    quality to every sound.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-
-      <h3>MIXING</h3>
-
-      <p>Powerful vocals, clarity and balance.</p>
-
-    </div>
-
-    <div class="card">
-
-      <h3>MASTERING</h3>
-
-      <p>Final polish for your music.</p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- SOFTWARE DEVELOPMENT -->
-
-<section id="development" class="dark">
-
-  <h2>SOFTWARE DEVELOPMENT</h2>
-
-  <p>
-    Exploring programming, web development,
-    software engineering and digital innovation.
-
-    Turning ideas into digital experiences.
-  </p>
-
-  <div class="cards">
-
-    <div class="card tech-card">
-
-      <h3>PROGRAMMING</h3>
-
-      <p>Developing software solutions.</p>
-
-    </div>
-
-    <div class="card tech-card">
-
-      <h3>WEB DEVELOPMENT</h3>
-
-      <p>Building websites and digital experiences.</p>
-
-    </div>
-
-    <div class="card tech-card">
-
-      <h3>TECH INNOVATION</h3>
-
-      <p>Exploring new ideas through technology.</p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-  <h2>LET'S CONNECT</h2>
-
-  <p>
-    For music production, collaborations,
-    business inquiries and development projects.
-  </p>
-
-  <a
-    href="https://instagram.com/brightfl0w"
-    target="_blank"
-    rel="noopener">
-
-    INSTAGRAM @BRIGHTFL0W
-
-  </a>
-
-  <a href="mailto:brightflowkpogbajr@gmail.com">
-
-    EMAIL BRIGHTFL0W
-
-  </a>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <strong>BRIGHTFL0W.</strong>
-
-  <br>
-
-  MIXX THIS SHII UP.
-
-  <br>
-
-  MUSIC PRODUCER | SOFTWARE DEVELOPER
-
-  <br>
-
-  LIBERIA
 
   <br><br>
 
-  © 2026 BRIGHTFL0W. ALL RIGHTS RESERVED.
+  <a href="https://audiomack.com/brightfl0w"
+     target="_blank"
+     rel="noopener"
+     class="btn">
+    VISIT MY AUDIOMACK
+  </a>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+
+  <h2 class="section-title">MUSIC PRODUCTION</h2>
+
+  <p class="section-subtitle">
+    Creating sounds. Building vibes. Bringing music to life.
+  </p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h3>BEAT PRODUCTION</h3>
+      <p>Original beats and instrumentals.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>RECORDING</h3>
+      <p>Professional recording services.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>MIXING &amp; MASTERING</h3>
+      <p>Bringing clarity and quality to your sound.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>CUSTOM BEATS</h3>
+      <p>Unique beats made to match your vision.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TECHNOLOGY -->
+<section id="tech">
+
+  <h2 class="section-title">TECHNOLOGY</h2>
+
+  <p class="section-subtitle">
+    Building ideas into digital experiences.
+  </p>
+
+  <div class="tech-content">
+
+    <h3>SOFTWARE DEVELOPMENT</h3>
+
+    <br>
+
+    <p>
+      I explore software development, programming and
+      technology to create useful digital solutions.
+    </p>
+
+    <p>
+      This is where creativity meets code.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+  <h2 class="section-title">LET'S CONNECT</h2>
+
+  <p class="section-subtitle">
+    For music, collaborations, projects and business inquiries.
+  </p>
+
+  <div class="contact-box">
+
+    <p>
+      EMAIL:
+      <a href="mailto:brightflowkpogbajr@gmail.com">
+        brightflowkpogbajr@gmail.com
+      </a>
+    </p>
+
+    <p>
+      INSTAGRAM:
+      <a href="https://instagram.com/brightfl0w"
+         target="_blank"
+         rel="noopener">
+        @BRIGHTFL0W
+      </a>
+    </p>
+
+    <p>
+      AUDIOMACK:
+      <a href="https://audiomack.com/brightfl0w"
+         target="_blank"
+         rel="noopener">
+        BRIGHTFL0W
+      </a>
+    </p>
+
+    <div class="socials">
+
+      <a href="https://instagram.com/brightfl0w"
+         target="_blank"
+         rel="noopener"
+         class="btn">
+        INSTAGRAM
+      </a>
+
+      <a href="https://audiomack.com/brightfl0w"
+         target="_blank"
+         rel="noopener"
+         class="btn">
+        AUDIOMACK
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <p>
+    &copy; 2026 <strong>BRIGHTFL0W</strong>.
+    All Rights Reserved.
+  </p>
+
+  <p>LIBERIA | MUSIC | TECHNOLOGY</p>
+
+  <p>MIXX THIS SHII UP.</p>
 
 </footer>
 
