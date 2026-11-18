@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
 <meta name="description" content="BRIGHTFL0W - Music Producer and Software Developer from Liberia.">
+
 <title>BRIGHTFL0W | Official Website</title>
 
 <style>
@@ -13,8 +14,7 @@
   --red: #ed1010;
   --dark-red: #710000;
   --black: #050505;
-  --white: #fff;
-  --gray: #bdbdbd;
+  --white: #ffffff;
 }
 
 * {
@@ -26,45 +26,52 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--black);
-  color: var(--white);
+  background: #050505;
+  color: white;
   line-height: 1.6;
 }
 
-/* BACKGROUND */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.88)),
+    linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.88)),
     url("background.jpg") center center / cover no-repeat;
   z-index: -1;
 }
 
 /* HEADER */
+
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0,0,0,.94);
-  border-bottom: 1px solid #3b0000;
-  padding: 15px 5%;
+  background: rgba(0,0,0,.96);
+  border-bottom: 1px solid #650000;
+  padding: 20px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.site-logo {
-  width: 145px;
-  max-height: 75px;
-  object-fit: contain;
+.brand {
+  color: white;
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.brand span {
+  color: var(--red);
 }
 
 nav {
   display: flex;
-  gap: 22px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -81,9 +88,10 @@ nav a:hover {
 }
 
 /* HERO */
+
 .hero {
   min-height: 90vh;
-  padding: 90px 20px;
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,23 +99,22 @@ nav a:hover {
   text-align: center;
 }
 
-.hero-logo {
-  width: min(300px, 75%);
-  max-height: 190px;
-  object-fit: contain;
-  margin-bottom: 25px;
-}
-
 .hero h1 {
-  font-size: clamp(38px, 8vw, 75px);
+  font-size: clamp(42px, 10vw, 90px);
   font-weight: 900;
   letter-spacing: -3px;
+  text-shadow: 0 4px 20px #000;
+}
+
+.hero h1 span {
+  color: var(--red);
 }
 
 .hero h2 {
-  font-size: clamp(18px, 4vw, 27px);
+  font-size: clamp(17px, 4vw, 27px);
   letter-spacing: 4px;
-  margin: 10px 0;
+  line-height: 1.5;
+  margin: 15px 0;
 }
 
 .hero p {
@@ -117,7 +124,7 @@ nav a:hover {
 }
 
 .tagline {
-  background: #050505;
+  background: black;
   border: 1px solid var(--red);
   padding: 17px 25px;
   font-weight: bold;
@@ -129,7 +136,7 @@ nav a:hover {
   display: inline-block;
   background: var(--red);
   color: white;
-  padding: 15px 28px;
+  padding: 14px 25px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
@@ -142,11 +149,12 @@ nav a:hover {
   color: var(--red);
 }
 
-/* GENERAL SECTIONS */
+/* SECTIONS */
+
 section {
   padding: 85px 7%;
   text-align: center;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 85px;
 }
 
 .section-title {
@@ -157,15 +165,16 @@ section {
 
 .section-subtitle {
   color: #ccc;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
 /* ABOUT */
+
 .about-content {
   max-width: 800px;
   margin: auto;
-  background: rgba(0,0,0,.75);
-  border: 1px solid #590000;
+  background: rgba(0,0,0,.8);
+  border: 1px solid #650000;
   padding: 35px;
   border-radius: 10px;
 }
@@ -176,8 +185,9 @@ section {
 }
 
 /* MUSIC */
+
 #music {
-  background: rgba(0,0,0,.72);
+  background: rgba(0,0,0,.75);
 }
 
 .music-grid {
@@ -189,7 +199,7 @@ section {
 }
 
 .music-card {
-  background: rgba(35,0,0,.85);
+  background: rgba(35,0,0,.9);
   border: 1px solid #750000;
   border-radius: 10px;
   overflow: hidden;
@@ -198,7 +208,7 @@ section {
 
 .music-card:hover {
   transform: translateY(-7px);
-  border-color: var(--red);
+  border-color: red;
 }
 
 .cover {
@@ -213,7 +223,7 @@ section {
 }
 
 .music-info h3 {
-  font-size: 20px;
+  font-size: 19px;
   margin-bottom: 12px;
 }
 
@@ -224,11 +234,12 @@ section {
 }
 
 .music-info .btn {
-  padding: 11px 17px;
   font-size: 13px;
+  padding: 11px 17px;
 }
 
 /* SERVICES */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -238,7 +249,7 @@ section {
 }
 
 .service-card {
-  background: rgba(50,0,0,.8);
+  background: rgba(45,0,0,.85);
   border: 1px solid #660000;
   border-radius: 10px;
   padding: 35px 20px;
@@ -246,7 +257,7 @@ section {
 }
 
 .service-card:hover {
-  border-color: var(--red);
+  border-color: red;
   transform: translateY(-5px);
 }
 
@@ -259,7 +270,8 @@ section {
   color: #ddd;
 }
 
-/* TECH */
+/* TECHNOLOGY */
+
 #tech {
   background: rgba(0,0,0,.8);
 }
@@ -270,7 +282,7 @@ section {
   padding: 35px;
   border: 1px solid #650000;
   border-radius: 10px;
-  background: rgba(30,0,0,.7);
+  background: rgba(30,0,0,.8);
 }
 
 .tech-content p {
@@ -279,17 +291,19 @@ section {
 }
 
 /* CONTACT */
+
 .contact-box {
   max-width: 700px;
   margin: auto;
   padding: 35px;
-  background: rgba(0,0,0,.85);
+  background: rgba(0,0,0,.9);
   border: 1px solid #660000;
   border-radius: 10px;
 }
 
 .contact-box p {
   margin: 15px 0;
+  overflow-wrap: anywhere;
 }
 
 .contact-box a {
@@ -307,9 +321,10 @@ section {
 }
 
 /* FOOTER */
+
 footer {
   text-align: center;
-  background: #000;
+  background: black;
   border-top: 1px solid #500000;
   padding: 30px 15px;
   color: #aaa;
@@ -320,23 +335,24 @@ footer strong {
 }
 
 /* MOBILE */
+
 @media(max-width: 600px) {
   header {
     flex-direction: column;
-    padding: 12px;
+    padding: 15px 10px;
   }
 
-  .site-logo {
-    width: 125px;
+  .brand {
+    font-size: 25px;
   }
 
   nav {
     justify-content: center;
-    gap: 15px;
+    gap: 14px;
   }
 
   nav a {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .hero {
@@ -360,9 +376,10 @@ footer strong {
 <body>
 
 <!-- HEADER -->
+
 <header>
-  <a href="#home">
-    <img src="logo.png" alt="BRIGHTFL0W Logo" class="site-logo">
+  <a href="#home" class="brand">
+    BRIGHTFL<span>0</span>W.
   </a>
 
   <nav>
@@ -375,13 +392,15 @@ footer strong {
 </header>
 
 <!-- HOME -->
+
 <section class="hero" id="home">
 
-  <img src="logo.png" alt="BRIGHTFL0W" class="hero-logo">
+  <h1>BRIGHTFL<span>0</span>W</h1>
 
-  <h1>BRIGHTFL0W</h1>
-
-  <h2>MUSIC PRODUCER &amp;<br> SOFTWARE DEVELOPER</h2>
+  <h2>
+    MUSIC PRODUCER &amp;<br>
+    SOFTWARE DEVELOPER
+  </h2>
 
   <p>LIBERIA | MUSIC | TECHNOLOGY | INNOVATION</p>
 
@@ -389,11 +408,14 @@ footer strong {
     MIXX THIS SHII UP — BRIGHTFL0W
   </div>
 
-  <a href="#music" class="btn">EXPLORE MY WORLD</a>
+  <a href="#music" class="btn">
+    EXPLORE MY WORLD
+  </a>
 
 </section>
 
 <!-- ABOUT -->
+
 <section id="about">
 
   <h2 class="section-title">ABOUT ME</h2>
@@ -424,6 +446,7 @@ footer strong {
 </section>
 
 <!-- MUSIC -->
+
 <section id="music">
 
   <h2 class="section-title">MY MUSIC</h2>
@@ -442,7 +465,6 @@ footer strong {
 
       <div class="music-info">
         <h3>KOLO SZN</h3>
-
         <p>Instrumental project by BRIGHTFL0W.</p>
 
         <a href="https://audiomack.com/brightfl0w"
@@ -463,7 +485,6 @@ footer strong {
 
       <div class="music-info">
         <h3>LONG LIVE GRANDMA</h3>
-
         <p>A special instrumental project.</p>
 
         <a href="https://audiomack.com/brightfl0w"
@@ -484,7 +505,6 @@ footer strong {
 
       <div class="music-info">
         <h3>MOTION SEASON INSTRUMENT</h3>
-
         <p>Another production from BRIGHTFL0W.</p>
 
         <a href="https://audiomack.com/brightfl0w"
@@ -511,6 +531,7 @@ footer strong {
 </section>
 
 <!-- SERVICES -->
+
 <section id="services">
 
   <h2 class="section-title">MUSIC PRODUCTION</h2>
@@ -546,6 +567,7 @@ footer strong {
 </section>
 
 <!-- TECHNOLOGY -->
+
 <section id="tech">
 
   <h2 class="section-title">TECHNOLOGY</h2>
@@ -574,6 +596,7 @@ footer strong {
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
 
   <h2 class="section-title">LET'S CONNECT</h2>
@@ -632,6 +655,7 @@ footer strong {
 </section>
 
 <!-- FOOTER -->
+
 <footer>
 
   <p>
